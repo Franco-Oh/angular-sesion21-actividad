@@ -7,9 +7,10 @@ import { Observable } from 'rxjs';
 })
 export class PermisoGuard implements CanActivate {
   canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+    // route: ActivatedRouteSnapshot,
+    // state: RouterStateSnapshot
+    ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    return false;
   }
   
 }

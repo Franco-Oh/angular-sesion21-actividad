@@ -4,6 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { PostComponent } from './post/post.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { LoginComponent } from './login/login.component';
+import { ComponentesModule } from '../componentes/componentes.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +17,15 @@ import { LoginComponent } from './login/login.component';
     LoginComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ComponentesModule,
+    ReactiveFormsModule
+  ],
+  exports: [
+    HomeComponent,
+    PostComponent,
+    FormularioComponent,
+    LoginComponent
   ]
 })
 export class PagesModule { }

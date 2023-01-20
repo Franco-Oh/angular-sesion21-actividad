@@ -1,1 +1,32 @@
-<p>login works!</p>
+<app-nav></app-nav>
+<div class="container">
+    <p>Inicia sesion con una de las cuentas permitidas.</p>
+
+    <form [formGroup]="formLogin" (submit)="send()" class="border">
+        <h1 class="text-primary-emphasis mt-3 mb-3">Login</h1>
+        <div class="mt-3">
+            <label for="usuario" class="fw-bolder">Usuario: </label>
+            <span appValidacion *ngIf="this.formLogin.get('usuario')?.invalid">
+                <span *ngIf="this.formLogin.get('usuario')?.dirty" class="text-danger"> (Debe tener mínimo 3 caracteres)</span>
+            </span><br>
+            <input type="text" id="usuario" formControlName="usuario" class="mt-2" [(ngModel)]="user">
+        </div>
+        <div class="mt-3">
+            <label for="password" class="fw-bolder">contraseña: </label>
+            <span appValidacion *ngIf="this.formLogin.get('password')?.invalid">
+                <span *ngIf="this.formLogin.get('password')?.dirty" class="text-danger"> (Debe tener mínimo 6 caracteres)</span>
+            </span><br>
+            <input type="text" id="password" formControlName="password" class="mt-2" [(ngModel)]="pswrd">
+        </div>
+        <div>
+            <button [disabled]="formLogin.invalid" class="btn btn-primary my-4">Login</button>
+            <button type="reset" class="btn btn-warning m-4">Borrar</button>
+        </div>
+    </form>
+    <div>
+        <p>Lista de usuarios permitidos:</p>
+        
+    </div>
+
+</div>
+
